@@ -7,21 +7,16 @@ import {
     Routes,
     Route,
 } from "react-router-dom";
-import Home from "./pages";
-import NotFound from "./pages/notFoundPage";
-import Results from "./pages/resultsPage";
+import SearchPage from './pages/SearchPage';
+import SearchDetailsPage from './pages/SearchDetailsPage';
 
 function App() {
     return (
         <Router>
             <Navbar/>
             <Routes>
-                <Route exact path="/" element={<Home />} />
-                <Route path="/results" element={<Results />} />
-                <Route
-                    path="/not-found"
-                    element={<NotFound />}
-                />
+                <Route path="/" element={<SearchPage />} />
+                <Route path="/details/:repoId" element={<SearchDetailsPage />} />
             </Routes>
         </Router>
     );
